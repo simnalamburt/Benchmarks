@@ -15,19 +15,20 @@ int main(int argc, const char * argv[]) {
     fprintf(stderr, "Usage: array-reverse <size> <iterations>\n");
     return 1;
   }
-  
+
   int count = atoi(argv[1]);
   int iterations = atoi(argv[2]);
-  
+
   int * array = malloc(sizeof(int) * count);
   for (int i = 0; i < count; i++) {
     array[i] = i;
   }
-  
+
   for (int i = 0; i < iterations; i++) {
     reverseArray(array, count);
   }
-  
+
+  volatile int _ = array[0];
   free(array);
   return 0;
 }
