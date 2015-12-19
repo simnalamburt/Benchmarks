@@ -1,0 +1,7 @@
+#!/bin/bash
+printf '## C'
+time c/a.out            100000 10000
+
+echo ''
+printf '## Java'
+time java -cp java Main 100000 10000
